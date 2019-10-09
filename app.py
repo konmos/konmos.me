@@ -101,13 +101,13 @@ def email():
 
 @app.route('/api/heart-post', methods=['POST'])
 def heart_post():
-    database.Posts.heart_post(request.json['post_id'])
+    database.Posts.heart_post(request.json['post_id'][:24])
     return jsonify(status='ok')
 
 
 @app.route('/api/unheart-post', methods=['POST'])
 def unheart_post():
-    database.Posts.unheart_post(request.json['post_id'])
+    database.Posts.unheart_post(request.json['post_id'][:24])
     return jsonify(status='ok')
 
 

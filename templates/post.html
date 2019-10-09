@@ -8,7 +8,7 @@ konmos | {{ location }} - {{ post['title'] }}
   <b>{{ post['title'] }}</b>
   <div class="sub-heading"><i class="feather-14" data-feather="calendar" style="color: #fdf6e3"></i> {{ post['time_created']|datetimeformat }}</div>
 
-  {{ post['content'] }}
+  {{ post['content']|safe }}
 
   <div class="post-feedback">
     Did you enjoy this post? If so, make sure to tap the heart: <i class="heart-btn" id="fav-btn" data-feather="heart"></i>
