@@ -3,6 +3,7 @@ import time
 from datetime import datetime
 
 from flask import Flask, render_template, abort, request, jsonify, Response, session
+from flask_cors import CORS
 from htmlmin.main import minify
 
 import config
@@ -10,6 +11,8 @@ import database
 
 app = Flask(__name__)
 app.config.from_object(config)
+
+CORS(app)  # enable CORS because I have no reason not to
 
 
 def format_timestamp(timestamp):
