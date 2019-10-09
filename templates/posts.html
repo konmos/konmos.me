@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block content %}
+  Showing posts for the year <b>{{ year }}</b>.
+  <a class="generic-button {{ 'disabled' if not year_exists(year - 1) }}" href="{{ ('/posts/' + (year - 1)|str) if year_exists(year - 1) else '#'}}">[{{ year - 1 }}]</a>
+  <a class="generic-button {{ 'disabled' if not year_exists(year + 1) }}" href="{{ ('/posts/' + (year + 1)|str) if year_exists(year + 1) else '#'}}">[{{ year + 1 }}]</a>
+  <a class="generic-button" target="_blank" href="/rss.xml">[rss]</a>
+
+  {% for p in posts %}
+    <a class="post-link" href="{{ '/posts/' + year|str + '/' + p['_id']|str }}">
+      <h1>
+        {{'~ ' + p['title'] }} <span class="tags">{{ ' '.join(p['tags']) }}</span>
+        <span class="sub-heading">
+          <i class="feather-14" data-feather="clock" style="color: #fdf6e3"></i> {{ p['time_created']|int }}
+          <i class="feather-14" data-feather="calendar" style="color: #fdf6e3"></i> {{ p['time_created']|datetimeformat }}
+          <i class="feather-14" data-feather="book-open" style="color: #fdf6e3"></i> {{ p['reading_time'] }}
+        </span>
+      </h1>
+    </a>
+    {{ p['description'] }}
+  {% endfor %}
+{% endblock %}

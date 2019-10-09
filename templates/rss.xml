@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0">
+    <channel>
+        <title>konmos.me posts</title>
+        <description>All posts for the year {{ year }}.</description>
+        {% for post in posts %}
+        <item>
+            <title>{{ post['title'] }}</title>
+            <link>https://konmos.me/posts/{{ year }}/{{ post['_id']|str }}</link>
+            <description>{{ post['description'] }}</description>
+        </item>
+        {% endfor %}
+    </channel>
+</rss>

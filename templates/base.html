@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <title>{% block title %}konmos | {{ location }}{% endblock %}</title>
+    <link rel="shortcut icon" type="image/png" href="{{ url_for('static', filename='img/km.png') }}"/>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="My personal website which acts as a sort-of-portfolio and a place where I can post whatever.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://konmos.me">
+    <meta property="og:title" content="konmos">
+    <meta property="og:description" content="My personal website which acts as a sort-of-portfolio and a place where I can post whatever.">
+    <meta property="og:image" content="https://konmos.me{{ url_for('static', filename='img/km.png') }}">
+    <meta property="og:locale" content="en-US">
+
+    {% block stylesheets_overwrite %}
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/normalize.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+    {% endblock %}
+
+    {% block stylesheets %}
+    {% endblock %}
+  </head>
+
+  <body>
+    {% block header_overwrite %}
+    <div class="header" id="header">
+      <a class="header-item" href="/" id="head-home">
+        <span class="header-item-text">[home]</span>
+        <span class="header-item-letter">[h]</span>
+      </a>
+
+      <a class="header-item" href="/posts" id="head-posts">
+        <span class="header-item-text">[posts]</span>
+        <span class="header-item-letter">[p]</span>
+      </a>
+
+      <a class="header-item" href="https://www.github.com/konmos" target="_blank">
+        <span class="header-item-text">[github]</span>
+        <span class="header-item-letter">[g]</span>
+      </a>
+
+      <a class="header-item" href="#" id="email">
+        <span class="header-item-text">[email]</span>
+        <span class="header-item-letter">[e]</span>
+      </a><span class="popup hidden" id="popup-email">click to copy</span>
+    </div><hr class="header-end"/>
+    {% endblock %}
+
+    {% block content %}
+    {% endblock %}
+
+    {%  block top_button_overwrite %}
+    <div class="top-button">
+      <a href="#" id="top-button">[top]</a>
+    </div>
+    {% endblock %}
+
+    {% block scripts_overwrite %}
+    <script type="text/javascript" src="{{ url_for('static', filename='js/feather.min.js') }}"></script>
+    <script type="text/javascript">feather.replace()</script>
+
+    <script type="text/javascript" src="{{ url_for('static', filename='js/base.js') }}"></script>
+
+    <script type="text/javascript">
+      if ('{{ location }}' === 'home') {
+          document.getElementById('head-home').classList.add('active');
+      } else if ('{{ location }}' === 'posts') {
+          document.getElementById('head-posts').classList.add('active')
+      }
+    </script>
+    {% endblock %}
+
+    {% block scripts %}
+    {% endblock %}
+
+    <script type="text/javascript" src="{{ url_for('static', filename='js/a.js') }}"></script>
+  </body>
+
+</html>

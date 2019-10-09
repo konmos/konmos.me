@@ -1,0 +1,237 @@
+html {
+  background-color: #073642;
+  color: #93a1a1;
+  line-height: 1.6;
+  font-size: 18px;
+  margin: 1em;
+}
+
+body {
+  display: block;
+  border: 1pt solid #586e75;
+  margin: 0 auto;
+  margin-bottom: 1em;  /* I have no idea why this works or why it's even needed in the first place. */
+  max-width: 23cm;
+  padding: 1em;
+  background-color: #002b36;
+  font-family: Consolas, Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, serif;
+}
+
+strong, b {
+  font-weight: bold;
+  color: #6c71c4;
+}
+
+img {
+  height: auto;
+  max-width: 100%;
+  border-radius: 2px;
+}
+
+ul {
+  font-style: italic;
+}
+
+a {
+  color: #d33682;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+.header {
+  text-align: center;
+}
+
+.header-item {
+  font-size: 16px;
+  color: #b58900;
+  font-weight: lighter;
+  text-decoration: inherit;
+  margin: 0 20px;
+}
+
+.header-end {
+  margin-bottom: 20px;
+  /*border-top: 1px dashed #586e75;*/
+  border-style: dashed none none;
+  border-width: 1px;
+  border-color: #586e75;
+  color: transparent;
+  background-color: transparent;
+}
+
+.header-item:hover {
+  color: #cb4b16;
+}
+
+.header-item.active {
+  font-weight: bold;
+}
+
+@media only screen and (min-width: 730px) {
+  .header-item-letter {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 729px) {
+  .header-item-text {
+    display: none;
+  }
+
+  .header-item {
+    margin: 0 5px;
+  }
+
+  #popup-email {
+    display: none;
+  }
+}
+
+h1, h2, h3 {
+  color: #859900;
+  line-height: 1.2;
+  margin-left: 20px;
+}
+
+/*
+h1:before {
+  content: '# ';
+}
+*/
+
+.popup {
+  color: #cb4b16;
+  font-size: 13px;
+  padding: 3px;
+}
+
+.sub-heading {
+  display: block;
+  color: #268bd2;
+  font-size: 16px;
+  font-weight: lighter;
+}
+
+.tags {
+  color: #cb4b16;
+  font-size: 14px;
+}
+
+/*.post-divider {*/
+  /*border-top: 1px solid #6c71c4;*/
+  /*color: transparent;*/
+  /*max-width: 70px;*/
+/*}*/
+
+.top-button {
+  margin-bottom: -15px;
+  text-align: right;
+}
+
+.top-button > a {
+  text-decoration: inherit;
+  color: #d33682;
+  font-size: 13px;
+  text-align: right;
+}
+
+.popup.hidden {
+  display: none;
+}
+
+.header > .popup {
+  margin: -20px;
+}
+
+.anchor {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+.anchor:hover {
+  text-decoration: underline;
+  text-decoration-color: #859900;
+}
+
+.clearfix {
+  overflow: auto;
+}
+
+.feather-14 {
+  width: 14px;
+  height: 14px;
+}
+
+.generic-button {
+  color: #d33682;
+  font-size: 16px;
+  font-weight: lighter;
+  text-decoration: inherit;
+}
+
+.generic-button.disabled {
+  text-decoration: line-through;
+}
+
+.post-link {
+  text-decoration: inherit;
+}
+
+input {
+  margin: 5px;
+  background-color: #eee8d5;
+  border: 1px solid #dc322f;
+  padding: 3px;
+}
+
+.post-feedback {
+  margin-top: 20px;
+  font-style: italic;
+  font-size: 16px;
+  font-weight: lighter;
+  color: #eee8d5;
+}
+
+.heart-btn {
+  width: 16px;
+  height: 16px;
+  color: #dc322f;
+  display: inline-flex;
+  vertical-align: middle;
+  line-height: inherit;
+}
+
+.heart-btn:hover {
+  cursor: pointer;
+}
+
+.heart-btn.active {
+  fill: #dc322f;
+}
+
+pre {
+  font: inherit;
+  font-weight: lighter;
+  font-size: 16px;
+  background: #eee8d5;
+  padding: 1em 1.5em;
+  border-radius: 3px;
+  border: 1px solid #dc322f;
+  border-left: 3px solid #dc322f;
+  color: #586e75;
+  page-break-inside: avoid;
+  line-height: inherit;
+  display: block;
+  word-wrap: break-word;
+  max-width: 100%;
+  overflow: auto;
+  margin: 18px 0;
+  font-style: italic;
+}
+
+small.not-to-be-said-out-loud {
+  text-decoration: line-through;
+}
