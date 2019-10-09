@@ -17,7 +17,8 @@ CLIENT = MongoClient(
     config.DATABASE_HOST,
     config.DATABASE_PORT,
     username=config.DATABASE_USER,
-    password=config.DATABASE_PASS
+    password=config.DATABASE_PASS,
+    connect=False
 )
 
 
